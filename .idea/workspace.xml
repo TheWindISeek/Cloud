@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f097ad-d540-49a3-9fbe-c623ef17f433" name="Changes" comment="前端半成">
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/JSONtest.java" afterDir="false" />
+    <list default="true" id="a9f097ad-d540-49a3-9fbe-c623ef17f433" name="Changes" comment="get set方法">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/CloudTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/CloudTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Vm.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Vm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudsim-cloudsim-4.0" beforeDir="false" afterPath="$PROJECT_DIR$/cloudsim-cloudsim-4.0" afterDir="false" />
     </list>
@@ -96,7 +96,7 @@
       <recent name="com.cloud.cloudcomputation.pojo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JSONtest.testJson">
+  <component name="RunManager" selected="Spring Boot.CloudComputationApplication">
     <configuration name="CloudComputationApplicationTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cloud.cloudcomputation.CloudComputationApplicationTests" />
       <module name="cloudComputation" />
@@ -170,10 +170,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JSONtest.testJson" />
         <item itemvalue="Spring Boot.CloudComputationApplication" />
-        <item itemvalue="Application.CloudComputationApplicationTests" />
         <item itemvalue="JUnit.CloudComputationApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.JSONtest.testJson" />
+        <item itemvalue="Application.CloudComputationApplicationTests" />
         <item itemvalue="Application.CloudSimExample1" />
       </list>
     </recent_temporary>
@@ -190,7 +190,7 @@
       <workItem from="1685984999852" duration="937000" />
       <workItem from="1686016998547" duration="4287000" />
       <workItem from="1686022817822" duration="5648000" />
-      <workItem from="1686037055560" duration="20945000" />
+      <workItem from="1686037055560" duration="25348000" />
     </task>
     <task id="LOCAL-00001" summary="在readme.md中设计完数据库前端后端">
       <created>1686028452623</created>
@@ -206,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686056883503</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="get set方法">
+      <created>1686059335807</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686059335807</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,26 +239,27 @@
     </ignored-roots>
     <MESSAGE value="在readme.md中设计完数据库前端后端" />
     <MESSAGE value="前端半成" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端半成" />
+    <MESSAGE value="get set方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="get set方法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html</url>
-          <line>546</line>
+          <line>553</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html</url>
-          <line>567</line>
+          <line>574</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html</url>
-          <line>488</line>
+          <line>492</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -264,6 +272,25 @@
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/JSONtest.java</url>
           <line>15</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java</url>
+          <line>17</line>
+          <properties class="com.cloud.cloudcomputation.web.CloudTaskController" method="execCloudlet">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

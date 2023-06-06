@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f097ad-d540-49a3-9fbe-c623ef17f433" name="Changes" comment="安心写服务层！">
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/dao/LogMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/dao/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/dao/VmMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao/LogMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao/VmMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/DaoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/ServiceTest.java" afterDir="false" />
+    <list default="true" id="a9f097ad-d540-49a3-9fbe-c623ef17f433" name="Changes" comment="测试了dao层的方法 应该没有问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Vm.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Vm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/CloudTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/CloudTaskServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/VmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/VmServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudsim-cloudsim-4.0" beforeDir="false" afterPath="$PROJECT_DIR$/cloudsim-cloudsim-4.0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +198,7 @@
       <workItem from="1686016998547" duration="4287000" />
       <workItem from="1686022817822" duration="5648000" />
       <workItem from="1686037055560" duration="33391000" />
-      <workItem from="1686072629502" duration="2580000" />
+      <workItem from="1686072629502" duration="4724000" />
     </task>
     <task id="LOCAL-00001" summary="在readme.md中设计完数据库前端后端">
       <created>1686028452623</created>
@@ -248,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686066678658</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="测试了dao层的方法 应该没有问题">
+      <created>1686075444539</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686075444539</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +271,8 @@
     <MESSAGE value="get set方法" />
     <MESSAGE value="前端完成" />
     <MESSAGE value="安心写服务层！" />
-    <option name="LAST_COMMIT_MESSAGE" value="安心写服务层！" />
+    <MESSAGE value="测试了dao层的方法 应该没有问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试了dao层的方法 应该没有问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -354,17 +349,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/DaoTest.java</url>
-          <line>32</line>
+          <line>33</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/DaoTest.java</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/DaoTest.java</url>
-          <line>37</line>
+          <line>38</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

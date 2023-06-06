@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cloudComputation:war">
+    <output-path>$PROJECT_DIR$/cloudComputationServer/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>cloudComputation</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="cloudComputation-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="cloudComputation:war exploded" />
+    </root>
+  </artifact>
+</component>

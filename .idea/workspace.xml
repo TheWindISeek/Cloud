@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f097ad-d540-49a3-9fbe-c623ef17f433" name="Changes" comment="前端完成">
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/CloudTaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/VmService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/CloudTaskServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/VmServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/FieldUtils.java" afterDir="false" />
+    <list default="true" id="a9f097ad-d540-49a3-9fbe-c623ef17f433" name="Changes" comment="安心写服务层！">
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/dao/LogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/dao/VmMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao/LogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao/VmMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/DaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/ServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Vm.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/pojo/Vm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/CloudTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/CloudTaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/VmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/VmServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudsim-cloudsim-4.0" beforeDir="false" afterPath="$PROJECT_DIR$/cloudsim-cloudsim-4.0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,40 +62,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "F:/JavaWebProject/Cloud",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.19425288",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "1b722a78250ddc9c7044bbbb945f3750",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/JavaWebProject/Cloud/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.19425288&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;1b722a78250ddc9c7044bbbb945f3750&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.cloud.cloudcomputation.util" />
       <recent name="com.cloud.cloudcomputation.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\JavaWebProject\Cloud\cloudComputationServer\src\main\resources\com\cloud\cloudcomputation\dao" />
+      <recent name="F:\JavaWebProject\Cloud\cloudComputationServer\src\main\resources" />
       <recent name="F:\JavaWebProject\Cloud" />
       <recent name="F:\JavaWebProject\Cloud\cloudComputationServer\src\main\java\com\cloud\cloudcomputation" />
       <recent name="F:\JavaWebProject\Cloud\cloudComputationServer\src\main\java" />
@@ -103,38 +109,15 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.cloud.cloudcomputation" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.cloud.cloudcomputation.pojo" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.CloudComputationApplication">
-    <configuration name="CloudComputationApplicationTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cloud.cloudcomputation.CloudComputationApplicationTests" />
-      <module name="cloudComputation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cloud.cloudcomputation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CloudSimExample1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.cloudbus.cloudsim.examples.CloudSimExample1" />
-      <module name="cloudsim-examples" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.cloudbus.cloudsim.examples.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CloudComputationApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DaoTest.testLog">
+    <configuration name="DaoTest.testLog" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cloudComputation" />
       <extension name="coverage">
         <pattern>
@@ -143,14 +126,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cloud.cloudcomputation" />
-      <option name="MAIN_CLASS_NAME" value="com.cloud.cloudcomputation.CloudComputationApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="MAIN_CLASS_NAME" value="com.cloud.cloudcomputation.DaoTest" />
+      <option name="METHOD_NAME" value="testLog" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JSONtest.testJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DaoTest.testUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cloudComputation" />
       <extension name="coverage">
         <pattern>
@@ -159,8 +142,34 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cloud.cloudcomputation" />
-      <option name="MAIN_CLASS_NAME" value="com.cloud.cloudcomputation.JSONtest" />
-      <option name="METHOD_NAME" value="testJson" />
+      <option name="MAIN_CLASS_NAME" value="com.cloud.cloudcomputation.DaoTest" />
+      <option name="METHOD_NAME" value="testUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DaoTest.testVm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cloudComputation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloud.cloudcomputation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cloud.cloudcomputation" />
+      <option name="MAIN_CLASS_NAME" value="com.cloud.cloudcomputation.DaoTest" />
+      <option name="METHOD_NAME" value="testVm" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest.userServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cloudComputation" />
+      <option name="PACKAGE_NAME" value="com.cloud.cloudcomputation" />
+      <option name="MAIN_CLASS_NAME" value="com.cloud.cloudcomputation.ServiceTest" />
+      <option name="METHOD_NAME" value="userServiceTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,11 +190,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DaoTest.testLog" />
+        <item itemvalue="JUnit.DaoTest.testVm" />
+        <item itemvalue="JUnit.ServiceTest.userServiceTest" />
+        <item itemvalue="JUnit.DaoTest.testUser" />
         <item itemvalue="Spring Boot.CloudComputationApplication" />
-        <item itemvalue="JUnit.CloudComputationApplicationTests.contextLoads" />
-        <item itemvalue="JUnit.JSONtest.testJson" />
-        <item itemvalue="Application.CloudComputationApplicationTests" />
-        <item itemvalue="Application.CloudSimExample1" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +210,8 @@
       <workItem from="1685984999852" duration="937000" />
       <workItem from="1686016998547" duration="4287000" />
       <workItem from="1686022817822" duration="5648000" />
-      <workItem from="1686037055560" duration="28340000" />
+      <workItem from="1686037055560" duration="33391000" />
+      <workItem from="1686072629502" duration="2580000" />
     </task>
     <task id="LOCAL-00001" summary="在readme.md中设计完数据库前端后端">
       <created>1686028452623</created>
@@ -231,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686063752637</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="安心写服务层！">
+      <created>1686066678658</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686066678658</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +276,8 @@
     <MESSAGE value="前端半成" />
     <MESSAGE value="get set方法" />
     <MESSAGE value="前端完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端完成" />
+    <MESSAGE value="安心写服务层！" />
+    <option name="LAST_COMMIT_MESSAGE" value="安心写服务层！" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -267,19 +285,16 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html</url>
           <line>553</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html</url>
           <line>574</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html</url>
           <line>492</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -336,6 +351,21 @@
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java</url>
           <line>78</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/DaoTest.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/DaoTest.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/test/java/com/cloud/cloudcomputation/DaoTest.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java</url>

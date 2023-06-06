@@ -4,7 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Cloud.iml" filepath="$PROJECT_DIR$/Cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloudComputationServer/cloudComputation.iml" filepath="$PROJECT_DIR$/cloudComputationServer/cloudComputation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloudsim/cloudsim.iml" filepath="$PROJECT_DIR$/cloudsim/cloudsim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudsim-cloudsim-4.0/modules/cloudsim/cloudsim.iml" filepath="$PROJECT_DIR$/cloudsim-cloudsim-4.0/modules/cloudsim/cloudsim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudsim-cloudsim-4.0/modules/cloudsim-examples/cloudsim-examples.iml" filepath="$PROJECT_DIR$/cloudsim-cloudsim-4.0/modules/cloudsim-examples/cloudsim-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudsim-cloudsim-4.0/cloudsim-package.iml" filepath="$PROJECT_DIR$/cloudsim-cloudsim-4.0/cloudsim-package.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudsim-cloudsim-4.0/documentation/src/main/resources/cloudsim-toolkit.iml" filepath="$PROJECT_DIR$/cloudsim-cloudsim-4.0/documentation/src/main/resources/cloudsim-toolkit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudsim-cloudsim-4.0/distribution/distribution.iml" filepath="$PROJECT_DIR$/cloudsim-cloudsim-4.0/distribution/distribution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudsim-cloudsim-4.0/documentation/documentation.iml" filepath="$PROJECT_DIR$/cloudsim-cloudsim-4.0/documentation/documentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudsim-cloudsim-4.0/modules/modules.iml" filepath="$PROJECT_DIR$/cloudsim-cloudsim-4.0/modules/modules.iml" />
     </modules>
   </component>
 </project>

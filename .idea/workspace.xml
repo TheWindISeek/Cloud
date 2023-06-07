@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f097ad-d540-49a3-9fbe-c623ef17f433" name="Changes" comment="算是写完一半了">
-      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/DaoUtil.java" afterDir="false" />
+    <list default="true" id="a9f097ad-d540-49a3-9fbe-c623ef17f433" name="Changes" comment="基础上可以说全部写完了">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/initCloudComputation.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/CloudTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/CloudTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/CloudTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/CloudTaskServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudsim-cloudsim-4.0" beforeDir="false" afterPath="$PROJECT_DIR$/cloudsim-cloudsim-4.0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +28,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/cloudComputationServer" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -59,44 +52,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/JavaWebProject/Cloud/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.19425288&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;1b722a78250ddc9c7044bbbb945f3750&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "F:/JavaWebProject/Cloud",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.19425288",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "1b722a78250ddc9c7044bbbb945f3750",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.cloud.cloudcomputation.util" />
       <recent name="com.cloud.cloudcomputation.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\JavaWebProject\Cloud" />
       <recent name="F:\JavaWebProject\Cloud\cloudComputationServer\src\main\resources\com\cloud\cloudcomputation\dao" />
       <recent name="F:\JavaWebProject\Cloud\cloudComputationServer\src\main\resources" />
-      <recent name="F:\JavaWebProject\Cloud" />
       <recent name="F:\JavaWebProject\Cloud\cloudComputationServer\src\main\java\com\cloud\cloudcomputation" />
       <recent name="F:\JavaWebProject\Cloud\cloudComputationServer\src\main\java" />
     </key>
@@ -209,7 +202,8 @@
       <workItem from="1686022817822" duration="5648000" />
       <workItem from="1686037055560" duration="33391000" />
       <workItem from="1686072629502" duration="5148000" />
-      <workItem from="1686103748044" duration="10960000" />
+      <workItem from="1686103748044" duration="11044000" />
+      <workItem from="1686115923479" duration="969000" />
     </task>
     <task id="LOCAL-00001" summary="在readme.md中设计完数据库前端后端">
       <created>1686028452623</created>
@@ -260,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686077389123</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="基础上可以说全部写完了">
+      <created>1686115796968</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686115796968</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,6 +284,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/cloudsim-cloudsim-4.0" />
+      <path value="$PROJECT_DIR$/cloudComputationServer" />
     </ignored-roots>
     <MESSAGE value="在readme.md中设计完数据库前端后端" />
     <MESSAGE value="前端半成" />
@@ -291,7 +293,8 @@
     <MESSAGE value="安心写服务层！" />
     <MESSAGE value="测试了dao层的方法 应该没有问题" />
     <MESSAGE value="算是写完一半了" />
-    <option name="LAST_COMMIT_MESSAGE" value="算是写完一半了" />
+    <MESSAGE value="基础上可以说全部写完了" />
+    <option name="LAST_COMMIT_MESSAGE" value="基础上可以说全部写完了" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

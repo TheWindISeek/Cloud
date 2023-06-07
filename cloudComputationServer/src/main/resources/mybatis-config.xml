@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <!-- 打印sql日志 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <!--environment 配置数据库的连接信息 可以配置多个环境 进行连接-->
+    <typeAliases>
+        <!--别名 简化后续配置-->
+        <package name="com.cloud.cloudcomputation.pojo"/>
+    </typeAliases>
+
+    <environments default="development">
+        <!--        在这里我们可以切换不同数据库的连接 使用default和id配合即可做到-->
+        <!--        当前default为development 因此就会自动连接下面的数据库-->
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--连接信息-->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://8.130.77.8:3306/CloudComputation?serverTimezone=UTCuseSSL=false&amp;serverTimezone=UTC"/>
+                <property name="username" value="Jeffrey"/>
+                <property name="password" value="Jeffrey"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!--加载map文件-->
+        <!--<mapper resource="com/example/api/dao/UserMapper.xml"/>-->
+        <!--Mapper代理 包扫描-->
+        <package name="com.cloud.cloudcomputation.dao"/>
+    </mappers>
+</configuration>

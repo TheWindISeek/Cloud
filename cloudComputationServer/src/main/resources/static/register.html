@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ch-ZN">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <script src="js/vue.js"></script>
+    <script src="js/axios.js"></script>
+    <script src="js/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="js/element-ui/lib/theme-chalk/index.css">
+    <script src="js/request.js"></script>
+    <script src="js/validate.js"></script>
+</head>
+
+<body>
+<h2>云平台--用户注册</h2>
+<div id="register-app">
+    <p style="color: red;" v-show="errorMsg">账号或者密码已被占用</p>
+    <table>
+        <tr>
+            <td>账号：</td>
+            <td><input type="text" name="username" v-model="loginForm.userName"></td>
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td><input type="password" name="password" v-model="loginForm.userPassword"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="注册" @click="handleRegister"></td>
+        </tr>
+    </table>
+</div>
+</body>
+
+<script>
+    new Vue({
+        el: "#register-app",
+        data() {
+            return {
+                loginForm: {
+                    userName: '',
+                    userPassword: ''
+                },
+                returnValue: false,
+                errorMsg: false
+            }
+        },
+        methods: {
+            async handleRegister() {
+                let _this = this;
+                axios(
+                    {
+                        method: "post",
+                        url: "http://localhost:8080/CloudComputation/user/register",
+                        data: _this.loginForm
+                    }
+                ).then(function (resp) {
+                    let returnValue = resp.data;
+                    console.log(returnValue);
+                    if (returnValue === true) {
+                        _this.errorMsg = false
+                        //重定向到新的页面 返回值为1的时候
+                        window.location.href = 'login.html'
+                    } else {
+                        //输出错误信息
+                        _this.errorMsg = true
+                    }
+                });
+            }
+        }
+    })
+</script>
+
+</html>

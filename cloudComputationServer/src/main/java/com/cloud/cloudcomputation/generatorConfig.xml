@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!--    自动生成mybatis配置的文件-->
+    <!-- 配置mysql的驱动（本地仓库中mysql的jar全路径） -->
+    <classPathEntry
+        location="/FileTranServer/lib/mysql-connector-java-8.0.16.jar" />
+    <context id="mysqlTables" targetRuntime="MyBatis3">
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <!-- 配置数据库连接 -->
+        <jdbcConnection
+			driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://8.130.77.8:3306/LyDBTest"
+            userId="root"
+            password="099011@HBUly">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- 生成model模型，对应的包，存放位置可以指定具体的路径,如/ProjectName/src，也可以使用MAVEN来自动生成 -->
+        <javaModelGenerator
+            targetPackage="pojo"
+            targetProject="FileTranServer/src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--对应的xml
+        mapper文件 ，目前没有跟dao接口同一目录下，可自行调整与dao同目录-->
+        <sqlMapGenerator
+            targetPackage="mapper"
+            targetProject="FileTranServer/src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- 对应的dao接口 -->
+        <javaClientGenerator
+			type="XMLMAPPER"
+            targetPackage="dao"
+            targetProject="FileTranServer/src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!-- 这里是数据库的表名t_user 以及 POJO类的名字User -->
+        <table tableName="Users" domainObjectName="Users"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+        <table tableName="Tag_Types" domainObjectName="Tag_Types"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+        <table tableName="Tags" domainObjectName="Tags"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+        <table tableName="Files_Tags" domainObjectName="Files_Tags"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+        <table tableName="Files_Files" domainObjectName="Files_Files"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+        <table tableName="Files" domainObjectName="Files"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+        <table tableName="Default_Icon" domainObjectName="Default_Icon"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+        <table tableName="Comments" domainObjectName="Comments"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+        <table tableName="Blob_Usage" domainObjectName="Blob_Usage"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+        <table tableName="Blobs" domainObjectName="Blobs"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+        <table tableName="Administrator" domainObjectName="Administrator"
+            enableCountByExample="false" enableSelectByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false">
+        </table>
+    </context>
+
+</generatorConfiguration>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ElementUi</title>
+    <!-- 引入样式 -->
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="js/element-ui/lib/theme-chalk/index.css">
+    <script src="js/axios.js"></script>
+    <style>
+        el-header {
+            background-color: #409EFF;
+            color: white;
+        }
+
+        el-footer {
+            background-color: #909399;
+            color: black;
+            text-align: center;
+        }
+
+        el-aside {
+            background-color: chartreuse;
+        }
+
+        el-main {
+            background-color: darkkhaki;
+        }
+
+        el-col {
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="app">
+    <!--   主体容器-->
+    <el-container style=" border: 1px solid #eee">
+        <!--        左侧选择框-->
+        <el-aside width="250px" style="background-color: rgb(238, 241, 246)">
+            <el-menu>
+                <el-submenu index="1">
+                    <template slot="title"><i class="el-icon-message"></i>服务器</template>
+                    <el-menu-item-group>
+                        <template slot="title">服务器购置</template>
+                        <el-menu-item index="1-1" @click="selectItem('1')">申请服务器</el-menu-item>
+                        <el-menu-item index="1-2" @click="selectItem('2')">查看现有服务器</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="2">
+                    <template slot="title"><i class="el-icon-menu"></i>任务</template>
+                    <el-menu-item-group>
+                        <template slot="title">任务创建</template>
+                        <el-menu-item index="2-1" @click="selectItem('3')">创建任务并分配</el-menu-item>
+                        <el-menu-item index="2-2" @click="selectItem('4')">查看结果</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="3">
+                    <template slot="title"><i class="el-icon-setting"></i>个人信息</template>
+                    <el-menu-item-group>
+                        <template slot="title">个人信息修改</template>
+                        <el-menu-item index="3-1" @click="selectItem('5')">个人信息修改</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="4" v-if="isAdm === true">
+                    <template slot="title"><i class="el-icon-setting"></i>管理员</template>
+                    <el-menu-item-group>
+                        <template slot="title">服务器</template>
+                        <el-menu-item index="3-1" @click="selectItem('6')">选择服务器故障</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+            </el-menu>
+        </el-aside>
+
+        <el-container>
+            <el-header style="text-align: right; font-size: 12px">
+                <el-dropdown @command="logout">
+                    <i class="el-icon-setting" style="margin-right: 15px"></i>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item command="a">登出</el-dropdown-item>
+                        <el-dropdown-item command="b">新增</el-dropdown-item>
+                        <el-dropdown-item command="c">删除</el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+                <span>{{user.userName}}</span>
+            </el-header>
+
+            <!--            中间的主要内容-->
+            <el-main>
+                <!--                申请服务器-->
+                <div v-if="type === '1'">
+                    <!--表单-->
+                    <el-form ref="form" :model="vm" label-width="160px">
+                        <el-form-item label="服务器名称">
+                            <el-input v-model="vm.vmName"></el-input>
+                        </el-form-item>
+                        <!--                        mips 每秒百万级指令执行-->
+                        <el-form-item label="选择CPU频率(MIPS)">
+                            <el-select v-model="vm.mips" placeholder="请选择存储大小">
+                                <el-option label="5MIPS" value="5"></el-option>
+                                <el-option label="10MIPS" value="10"></el-option>
+                                <el-option label="20MIPS" value="20"></el-option>
+                                <el-option label="40MIPS" value="40"></el-option>
+                            </el-select>
+                        </el-form-item>
+
+                        <!--                        size-->
+                        <el-form-item label="选择存储大小">
+                            <el-select v-model="vm.size" placeholder="请选择存储大小">
+                                <el-option label="40GB" value="40"></el-option>
+                                <el-option label="80GB" value="80"></el-option>
+                                <el-option label="160GB" value="160"></el-option>
+                                <el-option label="320GB" value="320"></el-option>
+                            </el-select>
+                        </el-form-item>
+
+                        <!--                        RAM-->
+                        <el-form-item label="选择RAM大小">
+                            <el-select v-model="vm.ram" placeholder="请选择ram大小">
+                                <el-option label="2GB" value="2"></el-option>
+                                <el-option label="4GB" value="4"></el-option>
+                                <el-option label="8GB" value="8"></el-option>
+                                <el-option label="16GB" value="16"></el-option>
+                            </el-select>
+                        </el-form-item>
+
+                        <!--                        CPU核数 选择几核CPU-->
+                        <el-form-item label="选择CPU核数">
+                            <el-select v-model="vm.pesNumber" placeholder="请选择CPU核数">
+                                <el-option label="2" value="2"></el-option>
+                                <el-option label="4" value="4"></el-option>
+                                <el-option label="8" value="8"></el-option>
+                                <el-option label="16" value="16"></el-option>
+                            </el-select>
+                        </el-form-item>
+                        <!--                        isAutoScaling 是否弹性伸缩-->
+                        <el-form-item label="是否配置弹性伸缩">
+                            <el-switch v-model="vm.isAutoScaling"></el-switch>
+                        </el-form-item>
+                        <!--                        os 选择何种操作系统-->
+                        <el-form-item label="操作系统">
+                            <el-select v-model="vm.os" placeholder="请选择操作系统">
+                                <el-option label="Linux" value="Linux"></el-option>
+                                <el-option label="WindowServer" value="WindowServer"></el-option>
+                                <el-option label="ArchLinux" value="ArchLinux"></el-option>
+                            </el-select>
+                        </el-form-item>
+
+                        <el-form-item>
+
+                        </el-form-item>
+
+                        <el-form-item>
+                            <el-button type="primary" @click="open">立即创建</el-button>
+
+                            <el-button>取消</el-button>
+                        </el-form-item>
+                    </el-form>
+                </div>
+                <!--                查看现有服务器-->
+                <div v-else-if="type === '2'">
+                    <el-button type="primary" @click="updateVmList">刷新</el-button>
+                    <el-table :data="vmList">
+                        <el-table-column prop="vmId" label="服务器编号"></el-table-column>
+                        <el-table-column prop="mips" label="MIPS"></el-table-column>
+                        <el-table-column prop="size" label="存储器大小"></el-table-column>
+                        <el-table-column prop="ram" label="内存大小"></el-table-column>
+                        <el-table-column prop="pesNumber" label="CPU核数"></el-table-column>
+                        <el-table-column prop="isAutoScaling" label="弹性伸缩策略"></el-table-column>
+                        <el-table-column label="操作">
+                            <template slot-scope="scope">
+                                <el-row>
+                                    <el-button type="primary" size="small" @click="isModifyVm = true">修改</el-button>
+                                    <!--    对话框-->
+                                    <el-dialog title="修改服务器" :visible.sync="isModifyVm" width="30%">
+                                        <!--表单-->
+                                        <el-form ref="form" :model="tempVm" label-width="160px">
+                                            <el-form-item label="服务器名称">
+                                                <el-input v-model="tempVm.vmName"></el-input>
+                                            </el-form-item>
+                                            <!--                        mips 每秒百万级指令执行-->
+                                            <el-form-item label="选择CPU频率(MIPS)">
+                                                <el-select v-model="tempVm.mips" placeholder="请选择存储大小">
+                                                    <el-option label="5MIPS" value="5"></el-option>
+                                                    <el-option label="10MIPS" value="10"></el-option>
+                                                    <el-option label="20MIPS" value="20"></el-option>
+                                                    <el-option label="40MIPS" value="40"></el-option>
+                                                </el-select>
+                                            </el-form-item>
+
+                                            <!--                        size-->
+                                            <el-form-item label="选择存储大小">
+                                                <el-select v-model="tempVm.size" placeholder="请选择存储大小">
+                                                    <el-option label="40GB" value="40"></el-option>
+                                                    <el-option label="80GB" value="80"></el-option>
+                                                    <el-option label="160GB" value="160"></el-option>
+                                                    <el-option label="320GB" value="320"></el-option>
+                                                </el-select>
+                                            </el-form-item>
+
+                                            <!--                        RAM-->
+                                            <el-form-item label="选择RAM大小">
+                                                <el-select v-model="tempVm.ram" placeholder="请选择ram大小">
+                                                    <el-option label="2GB" value="2"></el-option>
+                                                    <el-option label="4GB" value="4"></el-option>
+                                                    <el-option label="8GB" value="8"></el-option>
+                                                    <el-option label="16GB" value="16"></el-option>
+                                                </el-select>
+                                            </el-form-item>
+
+                                            <!--                        CPU核数 选择几核CPU-->
+                                            <el-form-item label="选择CPU核数">
+                                                <el-select v-model="tempVm.pesNumber" placeholder="请选择CPU核数">
+                                                    <el-option label="2" value="2"></el-option>
+                                                    <el-option label="4" value="4"></el-option>
+                                                    <el-option label="8" value="8"></el-option>
+                                                    <el-option label="16" value="16"></el-option>
+                                                </el-select>
+                                            </el-form-item>
+                                            <!--                        isAutoScaling 是否弹性伸缩-->
+                                            <el-form-item label="是否配置弹性伸缩">
+                                                <el-switch v-model="tempVm.isAutoScaling"></el-switch>
+                                            </el-form-item>
+                                            <!--                        os 选择何种操作系统-->
+                                            <el-form-item label="操作系统">
+                                                <el-select v-model="tempVm.os" placeholder="请选择操作系统">
+                                                    <el-option label="Linux" value="Linux"></el-option>
+                                                    <el-option label="WindowServer" value="WindowServer"></el-option>
+                                                    <el-option label="ArchLinux" value="ArchLinux"></el-option>
+                                                </el-select>
+                                            </el-form-item>
+
+                                            <el-form-item>
+                                                <el-button type="primary" @click="isModifyVm = false">修改</el-button>
+                                                <el-button type="primary" @click="isModifyVm = false">取消</el-button>
+                                            </el-form-item>
+                                        </el-form>
+                                    </el-dialog>
+                                    <el-button type="danger" size="small" @click.native.prevent="deleteRow(scope.$index, vmList)">删除</el-button>
+                                </el-row>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </div>
+                <!--               创建任务并分配 -->
+                <div v-else-if="type === '3'">
+                    <!--表单-->
+                    <el-form ref="form" :model="cloudlet" label-width="160px">
+                        <!--                    cloudlet Length -->
+                        <el-form-item label="任务长度">
+                                <el-input v-model="cloudlet.cloudletLength"></el-input>
+                        </el-form-item>
+                        <!--                        size-->
+                        <el-form-item label="输入文件大小">
+                            <el-input v-model="cloudlet.cloudletFileSize"></el-input>
+                        </el-form-item>
+                        <!--                        size-->
+                        <el-form-item label="输出文件大小">
+                            <el-input v-model="cloudlet.cloudletOutputSize"></el-input>
+                        </el-form-item>
+
+
+                        <!--                        CPU核数 选择几核CPU-->
+                        <el-form-item label="选择CPU核数">
+                            <el-select v-model="cloudlet.perNumber" placeholder="请选择CPU核数">
+                                <el-option label="2" value="2"></el-option>
+                                <el-option label="4" value="4"></el-option>
+                                <el-option label="8" value="8"></el-option>
+                                <el-option label="16" value="16"></el-option>
+                            </el-select>
+                        </el-form-item>
+                        <!--                        isAutoScaling 是否弹性伸缩-->
+                        <el-form-item label="是否独占">
+                            <el-switch v-model="cloudlet.isFull"></el-switch>
+                        </el-form-item>
+                        <!--                    这里我们不坚持是否是自己的服务器   云服务器Id-->
+                        <el-form-item label="运行云服务id">
+                            <el-input v-model="cloudlet.vmId"></el-input>
+                        </el-form-item>
+
+                        <el-form-item>
+                            <el-button type="primary" @click="onSubmitTask">立即创建</el-button>
+                            <el-button>取消</el-button>
+                        </el-form-item>
+                    </el-form>
+                </div>
+                <!--                查看结果-->
+                <div v-else-if="type === '4'">
+                    <div>
+                        你当前任务获得的结果是
+                    </div>
+                    <div>
+                        <pre>
+                            {{ taskResult }}
+                        </pre>
+                    </div>
+                </div>
+                <!--                个人信息修改-->
+                <div v-else-if="type === '5'">
+                    <!--表单-->
+<!--                    对我这里什么都不想做 只想快点写完-->
+                    <el-form ref="form" :model="user" label-width="80px">
+                        <el-form-item label="用户名">
+                            <el-input v-model="user.userName"></el-input>
+                        </el-form-item>
+                        <el-form-item label="密码">
+                            <el-input v-model="user.userPassword"></el-input>
+                        </el-form-item>
+                        <el-form-item label="积分">
+                            <el-input v-model="user.userScore"></el-input>
+                        </el-form-item>
+
+                        <el-form-item>
+                            <el-button type="primary" @click="onSubmitUser">更新</el-button>
+                            <el-button>取消</el-button>
+                        </el-form-item>
+                    </el-form>
+                </div>
+                <!--                选择服务器故障-->
+                <div v-else-if="type === '6'">
+                    <el-button type="primary" @click="updateVmList">刷新</el-button>
+                    <el-table :data="vmList">
+                        <el-table-column prop="vmId" label="服务器编号"></el-table-column>
+                        <el-table-column prop="mips" label="MIPS"></el-table-column>
+                        <el-table-column prop="size" label="存储器大小"></el-table-column>
+                        <el-table-column prop="ram" label="内存大小"></el-table-column>
+                        <el-table-column prop="pesNumber" label="CPU核数"></el-table-column>
+                        <el-table-column prop="isAutoScaling" label="弹性伸缩策略"></el-table-column>
+                        <el-table-column label="操作">
+                            <template slot-scope="scope">
+                                    <el-button type="primary" size="small" @click="faultRow(scope.$index, vmList)">故障</el-button>
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </div>
+                <div v-else>
+                    恭喜你 出错了
+                </div>
+            </el-main>
+        </el-container>
+    </el-container>
+
+
+</div>
+
+<script>
+
+    let vm = new Vue({
+        el: "#app",
+        data() {
+            //数据的设置和相关的处理
+            let item = {
+                date: '2016-05-02',
+                name: '王小虎',
+                address: '上海市普陀区金沙江路 1518 弄'
+            };
+            let _user = JSON.parse(localStorage.getItem('userInfo'));
+            console.log(_user)
+            let _isAdm = _user.userPrimary >= 4;
+            //返回给外界的数据
+            return {
+                //是否是管理员模式
+                isAdm: _isAdm,
+                //用于main页面的显示
+                type: '1',
+                //当前页面用户的数据
+                user: _user
+                //     {
+                //   userId:1,//用户id
+                //   userPrimary:4,//用户权限
+                //   userScore: 0,//用户积分
+                //   userName: 'lucifer',//用户昵称
+                //   userPassword: 'lucifer'//用户密码
+                // }
+                ,
+                //执行任务后返回的结果
+                taskResult: 'nnn\n\t111',
+                //申请创建的虚拟机相关的参数
+                vm: {
+                    vmid: 0,
+                    vmName:'1',
+                    mips: 1,
+                    size: 1000,
+                    ram: 1000,
+                    pesNumber: 100,
+                    isAutoScaling: 1,
+                    os: 'Linux',
+                    userId: 1
+                },
+                //是否修改了vm 闲置
+                isModifyVm:false,
+                //当前在那个index下 闲置
+                index : 0,
+                //修改页面的虚拟机配置 闲置
+                tempVm:{
+                    vmName:'1',
+                    vmid: 0,
+                    mips: 1,
+                    size: 1000,
+                    ram: 1000,
+                    pesNumber: 100,
+                    isAutoScaling: 1,
+                    os: 'Linux',
+                    userId: 1
+                },
+                //后端返回给前端的当前用户的虚拟机列表
+                vmList: [
+                    {
+                        vmid: 0,
+                        vmName:'1',
+                        mips: 1,
+                        size: 1000,
+                        ram: 1000,
+                        pesNumber: 100,
+                        isAutoScaling: 1,
+                        os: 'Linux',
+                        userId: 1
+                    },
+                    {
+                        vmid: 0,
+                        vmName:'1',
+                        mips: 1,
+                        size: 1000,
+                        ram: 1000,
+                        pesNumber: 100,
+                        isAutoScaling: 1,
+                        os: 'Linux',
+                        userId: 1
+                    },
+                    {
+                        vmid: 0,
+                        vmName:'1',
+                        mips: 1,
+                        size: 1000,
+                        ram: 1000,
+                        pesNumber: 100,
+                        isAutoScaling: 1,
+                        os: 'Linux',
+                        userId: 1
+                    }
+                ],
+                //用于申请的云任务配置
+                cloudlet : {
+                    cloudletLength: 1,
+                    cloudletFileSize: 1,
+                    cloudletOutputSize: 1,
+                    perNumber:1,
+                    isFull:1,
+                    vmId: 1
+                },
+                cost:0
+            }
+        },
+        methods: {
+            //弃用
+            onSubmit() {
+                console.log(this.vm);
+                console.log("submit!");
+            },
+            //点击左侧的导航栏后能够修改右侧的main的显示
+            selectItem(index) {
+                this.type = index;//修改显示为对应index
+                console.log(index);
+            },
+            //删除一行 其实只是从前端删除了 后端不想写捏
+            deleteRow(index, rows) {
+                rows.splice(index, 1);
+            },
+            //修改当前行 弃用
+            modifyRow(index, rows) {
+                rows.splice(index, 1);
+                this.isModifyVm = true;
+            },
+            modifyCurrent() {
+                this.vmList.push(this.tempVm)
+                this.isModifyVm = false;
+            },
+
+
+            //将当前的云任务提交到后端 cloudlet 返回的执行结果赋值给result
+            onSubmitTask() {
+                console.log(this.cloudlet)
+                //console.log(this.$refs.form.model)
+                let cloudlet = this.cloudlet;
+                console.log(cloudlet)
+                let _this = this;
+                axios({
+                    method:"post",
+                    url:"http://localhost:8080/CloudComputation/Cloudlet/execCloudlet",
+                    data: {
+                        'cloudlet' : _this.cloudlet,
+                        'user' : _this.user
+                    }
+                }).then(function (resp) {
+                    console.log("exec Cloudlet")
+                    console.log(resp.data)
+
+                    _this.taskResult = resp.data;
+                });
+                this.type = '4';//切换到第四个状态
+            },
+            //将用户的修改信息提交给后端 user
+            onSubmitUser() {
+                console.log(this.user)
+                //console.log(this.$refs.form.model)
+                let user = this.user
+                axios({
+                    method:"post",
+                    url:"http://localhost:8080/CloudComputation/user/update",
+                    data: user
+                }).then(function (resp) {
+                    console.log("update user")
+                    console.log(resp.data)
+
+                });
+            },
+            //将当前vm和userId 发送给后端 标记这个服务器已经失效
+            faultRow(index, rows) {
+                console.log(index)
+                console.log(rows.at(index))
+                let vm = rows.at(index)
+                let _this = this.user
+                let sendData = {
+                    'vmId' : vm.vmId,
+                    'userId' : _this.userId
+                }
+                console.log(sendData)
+                axios({
+                    method:"post",
+                    url:"http://localhost:8080/CloudComputation/Vm/FaultVm",
+                    data: sendData
+                }).then(function (resp) {
+                    console.log("fault vm")
+                    console.log(resp.data)
+
+
+                });
+            },
+            //更新vmlist列表
+            updateVmList() {
+                console.log(this.vmList);
+                let userId = this.user.userId;
+                console.log(userId)
+                let _this = this;
+                axios({
+                    method:"post",
+                    url:"http://localhost:8080/CloudComputation/Vm/RequestVmList",
+                    data: {
+                        'userId':userId
+                    }
+                }).then(function (resp) {
+                    console.log("request vm list")
+                    console.log(resp.data)
+
+
+                    //将返回的list<vm>写入到  vmlist中
+                    _this.vmList = resp.data;
+
+
+                });
+            },
+            //将当前的vm和userId 发送到后端 返回一个vm对象 并将这个对象添加到用户的列表中
+            onSubmitServer() {
+                console.log(this.vm);
+                let _this = this;
+                let vm = {
+                    'vm': _this.vm,
+                    'userId' : _this.user.userId
+                };
+                axios({
+                    method:"post",
+                    url:"http://localhost:8080/CloudComputation/Vm/RequestVm",
+                    data: vm
+                }).then(function (resp) {
+                    console.log("request vm")
+                    console.log(resp.data)
+
+                    _this.vm = resp.data;
+                });
+            },
+            //计算费用的函数
+            costVm() {
+                let times = this.vm.isAutoScaling ? 1.5 : 1;
+                return times * (this.vm.mips
+                    + this.vm.ram * 0.8
+                    + this.vm.pesNumber
+                    + this.vm.size * 0.05);
+            },
+            open() {
+                let cost = parseInt(this.costVm());
+                let msg = '此项操作将会耗费' + cost + ", 是否继续?";
+                this.$confirm(msg, '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    //先把消息发送到服务器
+                    this.user.userScore -= cost;
+                    //这里其实还应该更新一下用户的信息的
+                    this.onSubmitUser()
+                    this.onSubmitServer()
+                    this.$message({
+                        type: 'success',
+                        message: '提交成功!'
+                    });
+                }).catch(() => {
+                    this.$message({
+                        type: 'info',
+                        message: '已取消提交'
+                    });
+                });
+            },
+            logout(command) {
+                //this.$message('click on item ' + command);
+                console.log("命令"+command);
+                switch (command) {
+                    case 'a':
+                        window.location.href = "login.html";
+                        break;
+                    case 'b':
+                        this.type = '5';
+                        break;
+                    case 'c':
+                        this.type = '5';
+                        break;
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

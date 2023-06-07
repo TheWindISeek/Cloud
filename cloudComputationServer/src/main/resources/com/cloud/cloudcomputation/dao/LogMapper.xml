@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.cloud.cloudcomputation.dao.LogMapper">
+  <resultMap id="BaseResultMap" type="com.cloud.cloudcomputation.pojo.Log">
+
+    <id column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="vmid" jdbcType="INTEGER" property="vmid" />
+    <result column="opType" jdbcType="INTEGER" property="optype" />
+  </resultMap>
+
+
+  <insert id="insertSelective" parameterType="com.cloud.cloudcomputation.pojo.Log">
+    insert into Log(userId, vmid, optype)
+        values (#{userid, jdbcType=INTEGER}, #{vmid, jdbcType=INTEGER}, #{optype, jdbcType=INTEGER});
+  </insert>
+</mapper>

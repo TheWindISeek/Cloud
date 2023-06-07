@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.cloud.cloudcomputation.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.cloud.cloudcomputation.pojo.User">
+
+    <id column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="userPrimary" jdbcType="INTEGER" property="userPrimary" />
+    <result column="userPassword" jdbcType="VARCHAR" property="userPassword" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="userScore" jdbcType="INTEGER" property="userScore" />
+  </resultMap>
+
+
+
+  <select id="selectSelective" resultType="com.cloud.cloudcomputation.pojo.User"
+          parameterType="com.cloud.cloudcomputation.pojo.User">
+    select *
+    from User
+    where userName = #{userName, jdbcType=VARCHAR}  and userPassword = #{userPassword, jdbcType=VARCHAR};
+  </select>
+
+
+
+  <insert id="insertSelective" parameterType="com.cloud.cloudcomputation.pojo.User">
+    insert into User(userPrimary, userPassword, userName, userScore)
+    values (#{userPrimary, jdbcType=INTEGER}, #{userPassword, jdbcType=VARCHAR}, #{userName, jdbcType=VARCHAR}, #{userScore, jdbcType=INTEGER});
+  </insert>
+
+
+  <update id="updateSelective" parameterType="com.cloud.cloudcomputation.pojo.User">
+    update User
+    set
+        userPassword = #{userPassword,jdbcType=VARCHAR},
+        userScore = #{userScore, jdbcType=INTEGER}
+    where userId = #{userId,jdbcType=INTEGER};
+  </update>
+</mapper>

@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9f097ad-d540-49a3-9fbe-c623ef17f433" name="Changes" comment="测试了dao层的方法 应该没有问题">
+    <list default="true" id="a9f097ad-d540-49a3-9fbe-c623ef17f433" name="Changes" comment="算是写完一半了">
+      <change afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/DaoUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/VmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/VmServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/CloudTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/CloudTaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/CloudTaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/CloudTaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/com/cloud/cloudcomputation/dao/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudsim-cloudsim-4.0" beforeDir="false" afterPath="$PROJECT_DIR$/cloudsim-cloudsim-4.0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +113,7 @@
       <recent name="com.cloud.cloudcomputation.pojo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DaoTest.testLog">
+  <component name="RunManager" selected="Spring Boot.CloudComputationApplication">
     <configuration name="DaoTest.testLog" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cloudComputation" />
       <extension name="coverage">
@@ -177,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.CloudComputationApplication" />
         <item itemvalue="JUnit.DaoTest.testLog" />
         <item itemvalue="JUnit.DaoTest.testVm" />
         <item itemvalue="JUnit.ServiceTest.userServiceTest" />
         <item itemvalue="JUnit.DaoTest.testUser" />
-        <item itemvalue="Spring Boot.CloudComputationApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +208,8 @@
       <workItem from="1686016998547" duration="4287000" />
       <workItem from="1686022817822" duration="5648000" />
       <workItem from="1686037055560" duration="33391000" />
-      <workItem from="1686072629502" duration="4724000" />
+      <workItem from="1686072629502" duration="5148000" />
+      <workItem from="1686103748044" duration="10960000" />
     </task>
     <task id="LOCAL-00001" summary="在readme.md中设计完数据库前端后端">
       <created>1686028452623</created>
@@ -242,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686075444539</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="算是写完一半了">
+      <created>1686077389123</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686077389123</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,24 +290,25 @@
     <MESSAGE value="前端完成" />
     <MESSAGE value="安心写服务层！" />
     <MESSAGE value="测试了dao层的方法 应该没有问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试了dao层的方法 应该没有问题" />
+    <MESSAGE value="算是写完一半了" />
+    <option name="LAST_COMMIT_MESSAGE" value="算是写完一半了" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html</url>
-          <line>553</line>
+          <line>559</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html</url>
-          <line>574</line>
+          <line>580</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/resources/static/test.html</url>
-          <line>492</line>
+          <line>500</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -304,22 +323,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java</url>
-          <line>58</line>
+          <line>60</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java</url>
-          <line>35</line>
+          <line>37</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/UserController.java</url>
-          <line>47</line>
+          <line>49</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -329,22 +343,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java</url>
-          <line>66</line>
+          <line>67</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java</url>
-          <line>78</line>
+          <line>79</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -362,14 +371,60 @@
           <line>38</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/CloudTaskController.java</url>
-          <line>22</line>
-          <properties class="com.cloud.cloudcomputation.web.CloudTaskController" method="execCloudlet">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="16" />
+          <line>32</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java</url>
+          <line>245</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java</url>
+          <line>219</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/util/CloudUtil.java</url>
+          <line>261</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cloudComputationServer/src/main/java/com/cloud/cloudcomputation/web/VmController.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

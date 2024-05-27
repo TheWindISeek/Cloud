@@ -82,6 +82,8 @@ SET FOREIGN_KEY_CHECKS=1;
 
 
 # 前端设计
+访问路径
+http://localhost:8080/CloudComputation/static/login.html
 ## 登录页面
 
 其实只有一个用户和密码 但是用户名最好还是唯一的
